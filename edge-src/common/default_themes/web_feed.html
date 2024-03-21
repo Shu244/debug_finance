@@ -1,44 +1,23 @@
 <main>
-  <section>
-    <h1>{{title}}</h1>
+  <section style="margin-bottom: 0em;">
+    <h1 style="margin-bottom: 0em;">{{title}}</h1>
+    {{#authors}}
+    <div class="one-line">
+      <span title="{{name}}">{{name}}</span>
+    </div>
+    {{/authors}}
     <div class="flex">
       {{#icon}}
-      <div class="mr-4">
-        <a href="{{icon}}" target="_blank">
-          <img alt="{{title}}" src="{{icon}}" class="img-lg" loading="lazy"/>
-        </a>
-      </div>
+      <a href="{{icon}}" target="_blank" class="flex" style="justify-content: center; align-items: center;">
+        <img alt="{{title}}" src="{{icon}}" width="50%" loading="lazy"/>
+      </a>
       {{/icon}}
-      <div>
-        {{#authors}}
-        <div class="one-line">
-          <span title="{{name}}">{{name}}</span>
-        </div>
-        {{/authors}}
-        <div>
-          {{#_microfeed.subscribe_methods.length}}
-          <div class="text-sm mt-4 mb-2">
-            Subscribe:
-          </div>
-          {{/_microfeed.subscribe_methods.length}}
-          <div class="flex flex-wrap">
-            {{#_microfeed.subscribe_methods}}
-            <a href="{{url}}" class="mr-4 mb-2">
-              <div class="flex items-center">
-                <img src="{{image}}" class="img-sm flex-none" alt="{{name}}" loading="lazy"/>
-                <div class="flex-1 ml-1 text-sm hide-mobile">{{name}}</div>
-              </div>
-            </a>
-            {{/_microfeed.subscribe_methods}}
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   {{#description}}
   <section>
-    <h2 class="border-b">About</h2>
+    <h2 class="border-b">Welcome</h2>
     <div>{{{description}}}</div>
   </section>
   {{/description}}
